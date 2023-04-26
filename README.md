@@ -2,6 +2,8 @@
 
 Stack Scanner is a small web app that allows you to scan through a stack of .tif files and filter by pixel values. It was built as a tool to help with ink detection in 3D x-ray scans of ancient papyrus as part of the [Vesuvius Challenge](https://scrollprize.org/).
 
+<img src="https://raw.githubusercontent.com/jessihamel/stack-scanner/main/screenshot.png" alt="Screenshot">
+
 ## Running the app
 
 Stack Scanner is a React frontend with a node backend. You'll need a relatively up to date version of [node](https://nodejs.org/en) to run the server. To start the app, run the following command in the root directory.
