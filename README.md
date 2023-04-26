@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Stack Scanner
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Stack Scanner is a small web app that allows you to scan through a stack of .tif files and filter by pixel values. It was built as a tool to help with ink detection in 3D x-ray scans of ancient papyrus as part of the [Vesuvius Challenge](https://scrollprize.org/).
 
-## Available Scripts
+## Running the app
 
-In the project directory, you can run:
+Stack Scanner is a React frontend with a node backend. You'll need a relatively up to date version of [node](https://nodejs.org/en) to run the server. To start the app, run the following command in the root directory.
 
-### `npm start`
+```bash
+npm run server
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+In your browser, go to [http://localhost:5000/](http://localhost:5000/) to view the app.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Adding your own .tif files to scan
 
-### `npm test`
+This repo has example .tif files, but you'll want to bring your own data.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+NB: Stack Scanner works with both 16bit or 8bit .tif files. It has only been tested on monochrome .tif files like the fragment files for the Vesuvius Challenge, but you'll get better performance if you downsample these. There's a utility script to do this for you at scripts/downsample.js. Running `npm run downsample` will resize your images to 2000 pixel wide .tiffs.
 
-### `npm run build`
+To add your own files:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Replace the .tif images in `./img` with your own
+2. Run `npm run createReference` in the root directory. This creates lower resolution .jpg copies of your images to use as reference images in the application. These images are created in the `.img/reference` directory.
+3. If you have a single reference .png you'd like to toggle as an overlay (eg. a hand-labeled ink binary mask), replace the image at `./reference/overlay.png`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Developing
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+By default, the server runs at localhost:5000 and serves the built version of the app in ./build. If you'd like to make changes to the client code, you'll want to run the development server by running `npm run start` and going to [http://localhost:3000/](http://localhost:3000/)
 
-### `npm run eject`
+## Contributing
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Pull requests and feature requests are welcome.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[MIT](https://choosealicense.com/licenses/mit/)

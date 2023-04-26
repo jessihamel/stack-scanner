@@ -1,38 +1,112 @@
-.App {
-  text-align: center;
+h1 {
+  background-color: white;
+  font-size: 18px;
+  padding: 8px 16px 0px 16px;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.version {
+  font-size: 0.8em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 8px;
 }
 
-.App-link {
-  color: #61dafb;
+.wrapper .loading {
+  margin-top: 40px;
+  position: absolute;
+  z-index: 2;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.wrapper .warning {
+  margin-top: 40px;
+  margin: 40px 8px 8px;
+  position: absolute;
+}
+
+.controls {
+  background-color: white;
+  box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 12px;
+  margin: 8px;
+  padding: 8px 12px;
+}
+
+.controls .label {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.control-row {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.control-row:first-child {
+  min-width: 100%;
+}
+
+.control-row:last-child {
+  margin-bottom: 0px;
+}
+
+.control-item {
+  margin-right: 16px;
+  min-width: 200px;
+}
+
+.tiff-selector {
+  margin-right: 0px;
+}
+
+.renderer-controls {
+  margin: 6px;
+  position: absolute;
+  z-index: 2;
+}
+
+.renderer-controls button {
+  background: white;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 4px 6px;
+}
+
+.renderer-controls button:hover {
+  background-color: rgb(200, 200, 200);
+  cursor: pointer;
+}
+
+.reference {
+  width: 50%;
+  position: relative;
+}
+
+.reference img {
+  position: absolute;
+  width: 100%;
+}
+
+.loading {
+  background-color: white;
+  border-radius: 3px;
+  padding: 4px;
+  margin: 8px;
+}
+
+.warning {
+  background-color: white;
+  border-radius: 3px;
+  color: darkorange;
+  font-size: 0.9em;
+  padding: 4px;
+}
+
+input[type='range'] {
+  min-width: 180px;
 }
