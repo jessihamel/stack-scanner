@@ -24,7 +24,6 @@ function Renderer({ data, markerSize, setViewState, viewState }) {
       opacity: 1,
       stroked: false,
       filled: true,
-      // radiusScale: radiusScale * 2,
       radiusMinPixels: 0.25,
       sizeUnits: 'pixels',
       getPosition: d => d,
@@ -38,12 +37,12 @@ function Renderer({ data, markerSize, setViewState, viewState }) {
 
   return (
     <DeckGL
-      controller={true}
       layers={layers}
       onViewStateChange={e => setViewState(e.viewState)}
       style={{ height: '100%', width: '100%' }}
       views={
         new OrthographicView({
+          controller: true,
           flipY: true,
         })
       }

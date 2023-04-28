@@ -34,7 +34,7 @@ function App() {
   const [distance, setDistance] = useState(20)
   const [markerSize, setMarkerSize] = useState(1)
   // Updates more slowly than the UI to increate performance
-  const [markerSizeDebounced, setMarkerSizeDebounced] = useState(2)
+  const [markerSizeDebounced, setMarkerSizeDebounced] = useState(1)
   const [showReference, toggleshowReference] = useState(false)
 
   // Image viewer state
